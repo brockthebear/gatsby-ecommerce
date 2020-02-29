@@ -1,11 +1,19 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
+		title: `Example Gatsby Store`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
 		author: `@gatsbyjs`,
 	},
 	plugins: [
 		`gatsby-plugin-stripe`,
+		{
+			resolve: `gatsby-source-stripe`,
+			options: {
+				objects: [`Product`, `Sku`],
+				secretKey: `sk_test_QhDhVOK1vGmN1s4c645p8yY700b3WFRsuN`,
+				downloadFiles: true,
+			},
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
